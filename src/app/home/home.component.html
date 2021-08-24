@@ -1,0 +1,56 @@
+<div class="container text-center">
+ <marquee><h6>Please select the below options and click on submit to consider your order for food!</h6></marquee> <br><br>
+<form [formGroup]="HospitalForm">
+  <div class="form-group">
+    <label for="wardnumber"><h3>Ward :</h3></label>
+    <select id="wardnumber" class="form-control" placeholder="Select ward" name="wardnumber" formControlName="wardnumber">
+      <option [ngValue]="c" *ngFor="let c of wardsList">
+        {{c}}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Bednumber"><h3>Bed number :</h3></label>
+    <select id="Bednumber"  class="form-control" placeholder="Enter password"  name="Bednumber" formControlName="Bednumber">
+      <option [ngValue]="c" *ngFor="let c of BedList">
+        {{c}}
+      </option>
+    </select> 
+  </div>
+  <div class="form-group">
+    <label for="Foodtype"><h3>Food type :</h3></label>
+    <select id="Foodtype"  class="form-control" placeholder="Enter password"  name="Foodtype" formControlName="Foodtype">
+      <option [ngValue]="c" *ngFor="let c of Foodtype">
+        {{c}}
+      </option>
+    </select> 
+  </div>
+  <div class="form-group">
+    <label for="Food"><h3>Food  :</h3></label>
+    <select id="Food"  class="form-control" placeholder="Enter password"  name="Food" formControlName="Food">
+      <option [ngValue]="c.food" *ngFor="let c of availbleFoods">
+        {{c.food}}
+      </option>
+    </select> 
+  </div>
+  <div class="form-group">
+    <label for="Food"><h3>Date  :</h3></label>
+    <input type="date" class="form-control" formControlName="Date">
+    
+  </div>
+  
+  <button type="submit " (click)="onSubmit()" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
